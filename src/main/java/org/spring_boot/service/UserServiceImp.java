@@ -1,4 +1,5 @@
 package org.spring_boot.service;
+
 import org.spring_boot.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,13 +11,14 @@ import java.util.List;
 @Transactional
 public class UserServiceImp implements UserService {
     private final UserRepository repo;
+
     public UserServiceImp(UserRepository repo) {
         this.repo = repo;
     }
 
     @Override
     public User addUser(User user) {
-       return repo.save(user);
+        return repo.save(user);
     }
 
     @Override
