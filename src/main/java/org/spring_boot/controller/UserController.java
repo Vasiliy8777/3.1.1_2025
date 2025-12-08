@@ -18,7 +18,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/")
-    public String usersTable(@RequestParam(value = "count", required = false) Integer count, ModelMap model) {
+    public String getUsersTable(@RequestParam(value = "count", required = false) Integer count, ModelMap model) {
         userService.initUsers();
         model.addAttribute("users", userService.listUsers());
         return "users";
